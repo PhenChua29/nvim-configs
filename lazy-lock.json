@@ -1,0 +1,6 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "31ddbea7c10b6920c9077b66c97951ca8682d5c8" },
+  "leaf.nvim": { "branch": "main", "commit": "613d63b4f77c486e4d19826cead68bf3daf8a3e6" },
+  "monokai-pro.nvim": { "branch": "master", "commit": "aafde73a622435891d36b411d8623e705ead6293" },
+  "onedarkpro.nvim": { "branch": "main", "commit": "9cb77d936fd42c2c98becceb0f132df170d4eba0" }
+}
