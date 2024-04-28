@@ -12,10 +12,21 @@ local options = {
   tabstop = 2,  
  
   -- =========== APPEARANCE =========== 
+  
+  -- Ensure that there are always n lines above/below the cursor when scrolling up/down 
+  scrolloff = 6,
 
+  -- Ensure that there are always n chracters to the left/right of the cursor when scrolling left/right
+  sidescrolloff = 10,
+
+  -- Turn of line wrap
+  wrap = false,
+  
   -- Hightlight current cursor position with a line
   cursorline = true,
-  cursorlineopt = "number,screenline",
+  
+  -- Always show the sign column so that text doesn't move when the sign column appears
+  signcolumn = "yes",
 
   -- Enable true color for better colorscheme support 
   termguicolors = true,
