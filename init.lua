@@ -6,6 +6,7 @@ vim.cmd "colorscheme lunaperche"
 local imports = {
   "user.options",
   "user.plugins",
+  "user.keymaps"
 }
 
 
