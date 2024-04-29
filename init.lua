@@ -4,9 +4,11 @@ vim.cmd "colorscheme lunaperche"
 -- Importing stuff down there
 
 local imports = {
+  "user.keymaps",
   "user.options",
   "user.plugins",
-  "user.keymaps"
+  "user.theme",
+  "user.cmp"
 }
 
 
@@ -16,7 +18,7 @@ for _,v in pairs(imports) do
   if not ok then
     vim.notify("Something's wrong while loading \"" .. v .. "\"\n\n")
     error(err) 
-  return
+    return
   end
 end
 

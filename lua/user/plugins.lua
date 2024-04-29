@@ -1,3 +1,5 @@
+-- Nice list of popular plugins: https://github.com/rockerBOO/awesome-neovim
+----------------------------------------------------------------------------
 
 -- Local path for lazy.nvim installation
 local installPath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -30,46 +32,36 @@ end
 
 -- Table of plugins
 local plugins = {
+
+  -- Themes
   "daschw/leaf.nvim",
   "loctvl842/monokai-pro.nvim",
   "olimorris/onedarkpro.nvim",
+
+  -- Code completion
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-buffer",
 }
 
+-- Some custom icons for Lazy.nvim interfaces
 local opts = {
   ui = {
     icons = {
       cmd = "⌘",
       config = "🛠",
-      event = "📅",
-      ft = "📂",
-      init = "⚙",
-      keys = "🗝",
-      plugin = "🔌",
-      runtime = "💻",
-      require = "🌙",
-      source = "📄",
-      start = "🚀",
-      task = "📌",
-      lazy = "💤 ",
+      event = "",
+      ft = "",
+      init = "󱓞",
+      keys = "󰌆",
+      plugin = "",
+      runtime = "",
+      require = "",
+      source = "",
+      start = "󱓞",
+      task = "󰐃",
+      lazy = "󰒲",
     },
   },
 }
 
 lazy.setup(plugins, opts) 
-
-
--- Import and use color scheme
-local themePlugin = "onedarkpro"
-local themeName = "onedark"
-themeName = "lunaperche"
-local themeConf = {}
-
-local ok, theme = pcall(require, themePlugin)
-if not ok then
-  vim.notify("Error while loading: " .. themePlugin)
-  error(theme)
-end
-
-theme.setup(themeConf)
-
-vim.cmd("colorscheme " .. themeName)
