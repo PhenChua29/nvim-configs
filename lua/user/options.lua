@@ -93,3 +93,17 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+ 
+-- =========== NETRW =========== 
+local netrw_options = {
+  -- Let netrw always refresh directory listing so that the keybind <C-l> won't be needed anymore
+  netrw_fastbrowse = 0,
+
+  -- Remove netrw banner at the top
+  netrw_banner = 0, 
+}
+
+for k, v in pairs(netrw_options) do
+	vim.g[k] = v
+end
