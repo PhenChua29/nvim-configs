@@ -10,7 +10,7 @@ local maps = {
   { "", "<Space>", "<Nop>", opts }, 
   
   -- Open explorer
-  { "n", "<leader>e", ":Lex 20<cr>", opts },
+  { "n", "<leader>e", ":Lex 20<CR>", opts },
   
   -- Resize windows
   { "n", "<Up>", ":resize -2<CR>", opts },
