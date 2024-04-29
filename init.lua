@@ -14,7 +14,7 @@ for _,v in pairs(imports) do
   local ok, err = pcall(require, v)
 
   if not ok then
-    print("Something's wrong while loading \"" .. v .. "\"\n\n")
+    vim.notify("Something's wrong while loading \"" .. v .. "\"\n\n")
     error(err) 
   return
   end

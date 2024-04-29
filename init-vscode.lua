@@ -2,7 +2,7 @@
 -- Great key bindings https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#keybindings-help
 
 if not vim.g.vscode then
-  print "vscode integration not detected"
+  vim.notify("vscode integration not detected")
   return
 end
 
@@ -19,7 +19,7 @@ for _, v in pairs(imports) do
   local ok, err = pcall(require, v)
 
   if not ok then
-    print("Something's wrong while loading \"" .. v .. "\"\n\n")
+    vim.notify("Something's wrong while loading \"" .. v .. "\"\n\n")
     error(err)
     return
   end
@@ -35,7 +35,7 @@ end
 --   --  local ok, err = pcall(vim.cmd, "source " .. v)
 --   --
 --   --  if not ok then
---   --    print("Something's wrong while loading \"" .. v .. "\"\n\n")
+--   --    vim.notify("Something's wrong while loading \"" .. v .. "\"\n\n")
 --   --    error(err)
 --   --  return
 --   --  end
@@ -44,7 +44,7 @@ end
 
 local ok, vscode = pcall(require, "vscode-neovim");
 if not ok then
-  print("Error while loading: vscode-neovim")
+  vim.notify("Error while loading: vscode-neovim")
   return
 end
 
