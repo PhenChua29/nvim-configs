@@ -9,12 +9,6 @@ local src = {
 } 
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.snippet.expand(args.body)
-    end
-  },
-
   sources = cmp.config.sources(src),
 
   mapping = {
