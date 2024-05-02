@@ -62,7 +62,8 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     lazy = true,
     dependencies = {
-      "nvim-lua/plenary.nvim", 
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim", -- improve sorting performance
     } 
   },
 
