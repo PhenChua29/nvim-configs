@@ -69,6 +69,9 @@ local plugins = {
 
   -- Which key
   { "folke/which-key.nvim", lazy = true },
+
+  -- Git integration
+  { "lewis6991/gitsigns.nvim", lazy = true },
 }
 
 -- Some custom icons for Lazy.nvim interfaces

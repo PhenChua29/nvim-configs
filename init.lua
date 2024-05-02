@@ -13,6 +13,7 @@ local imports = {
   "user.lsp",
   "user.telescope",
   "user.whichkey",
+  "user.gitsigns",
 }
 
 for _,v in pairs(imports) do
