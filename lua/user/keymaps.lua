@@ -12,6 +12,9 @@ local maps = {
   -- Open explorer
   { "n", "<leader>e", ":Lex 20<CR>", opts },
   
+  -- Pasting without yanking
+  { "v", "p", '"_dP', opts },
+  
   -- Resize windows
   { "n", "<Up>", ":resize -2<CR>", opts },
   { "n", "<Down>", ":resize +2<CR>", opts },
@@ -23,16 +26,16 @@ local maps = {
   { "n", "<S-h>", ":bprevious<CR>", opts },
   
   -- Move lines up/down
-  { "n", "<A-j>", ":move .+1<CR>==", opts},
-  { "n", "<A-k>", ":move .-2<CR>==", opts},
-  { "i", "<A-j>", "<ESC>:move .+1<CR>==gi", opts},
-  { "i", "<A-k>", "<ESC>:move .-2<CR>==gi", opts},
-  { "v", "<A-j>", ":move '>+1<CR>gv=gv", opts},
-  { "v", "<A-k>", ":move '<-2<CR>gv=gv", opts},
-  
+  { "n", "<A-j>", ":move .+1<CR>==", opts },
+  { "n", "<A-k>", ":move .-2<CR>==", opts },
+  { "i", "<A-j>", "<ESC>:move .+1<CR>==gi", opts },
+  { "i", "<A-k>", "<ESC>:move .-2<CR>==gi", opts },
+  { "v", "<A-j>", ":move '>+1<CR>gv=gv", opts },
+  { "v", "<A-k>", ":move '<-2<CR>gv=gv", opts },
+
   -- Move line left/right
-  { "v", "<", "<gv", opts},
-  { "v", ">", ">gv", opts},
+  { "v", "<", "<gv", opts },
+  { "v", ">", ">gv", opts },
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
