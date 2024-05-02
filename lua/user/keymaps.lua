@@ -36,6 +36,9 @@ local maps = {
   -- Move line left/right
   { "v", "<", "<gv", opts },
   { "v", ">", ">gv", opts },
+
+  -- Telescope
+  { "n", "<leader>f", ":Telescope find_files<CR>", opts },
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
