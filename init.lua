@@ -8,9 +8,12 @@ local imports = {
   "user.options",
   "user.plugins",
   "user.theme",
-  "user.cmp"
+  "user.cmp",
+  "user.bigfile",
+  "user.lsp",
+  "user.telescope",
+  "user.whichkey",
 }
-
 
 for _,v in pairs(imports) do
   local ok, err = pcall(require, v)

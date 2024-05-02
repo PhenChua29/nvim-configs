@@ -34,13 +34,40 @@ end
 local plugins = {
 
   -- Themes
-  "daschw/leaf.nvim",
-  "loctvl842/monokai-pro.nvim",
-  "olimorris/onedarkpro.nvim",
+  { "daschw/leaf.nvim", lazy = true },
+  { "loctvl842/monokai-pro.nvim", lazy = true },
+  { "olimorris/onedarkpro.nvim", lazy = true },
 
   -- Code completion
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-buffer",
+  { 
+    "hrsh7th/nvim-cmp", 
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "SergioRibera/cmp-dotenv",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp",    
+    },
+  },
+   
+  -- Big file handler
+  { "LunarVim/bigfile.nvim", lazy = true },
+  
+  -- lsp
+  { "neovim/nvim-lspconfig", lazy = true }, 
+  
+  -- Telescope
+  {
+    "nvim-telescope/telescope.nvim",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim", 
+    } 
+  },
+
+  -- Which key
+  { "folke/which-key.nvim", lazy = true },
 }
 
 -- Some custom icons for Lazy.nvim interfaces
@@ -51,15 +78,15 @@ local opts = {
       config = "🛠",
       event = "",
       ft = "",
-      init = "󱓞",
+      init = "🚀",
       keys = "󰌆",
       plugin = "",
       runtime = "",
-      require = "",
-      source = "",
-      start = "󱓞",
+      require = "🎯",
+      source = "󰞗",
+      start = "🚀",
       task = "󰐃",
-      lazy = "󰒲",
+      lazy = "💤",
     },
   },
 }
