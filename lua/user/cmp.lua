@@ -1,8 +1,11 @@
 local ok, cmp = pcall(require, "cmp")
+
 if not ok then
   vim.notify("Error while loading: cmp")
   error(cmp)
 end
+
+local DEBUG = false 
 
 local src = {
   { -- Search for words in buffer (can be a resource hog with large file) 
@@ -61,10 +64,35 @@ local borders = {
   getBorderMultipleJoins({ "┏", "┓", "┛", "┗" }, "━", "┃"), -- single bold
 }
 
-local window_style = {
-  border = borders[3], 
+local kind_icons = {
+  Text = "",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "󰈙",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = "󰅲",
 }
 
+-- Setup the values
 cmp.setup({
   sources = cmp.config.sources(src),
 
@@ -85,7 +113,95 @@ cmp.setup({
   },
   
   window = {
-    completion = window_style,
-    documentation = window_style,
+    completion = {
+      border = borders[3], 
+      winhighlight = 'Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None',
+      scrollbar = false,
+    },
+
+    documentation = {
+      border = borders[3], 
+      winhighlight = 'Normal:None,FloatBorder:None',
+    }
+  },
+
+  formatting = {
+    
+    -- Change item positions
+    fields = { "kind" , "abbr", "menu" },
+    format = function(entry, item)
+
+      -- Vanila format with no dependency
+      local vanila = function(entry, item, show_source)
+        if DEBUG then
+          print(string.format("item: %s", vim.inspect(item)))
+        end
+         
+        -- icons
+        local icon_name = item.kind
+        item.menu = item.kind 
+        item.kind = string.format("%s", kind_icons[icon_name])
+
+        -- sources' name
+        local custom_names = {
+          buffer = "[Buffer]",
+          path = "[Path]",
+          dotenv = "[Env]",
+          nvim_lua = "[Nvim lua]",
+          nvim_lsp = "[LSP]",
+        } 
+        
+        if show_source then
+          item.menu = string.format("   %-12s%s", item.menu, custom_names[entry.source.name])
+        else 
+          item.menu = string.format("   %s", item.menu)
+        end
+
+        if DEBUG then
+          print(string.format("item (modified): %s", vim.inspect(item)))
+        end
+
+        return item
+      end
+
+      -- Format with dependency
+      local split_kind = function(entry, item)
+        local ok, lspkind = pcall(require, "lspkind")
+        
+        if not ok then
+          vim.notify("Error while loading: lspkind")
+          return vanila(entry, item) 
+        end
+
+        local modified_item = lspkind.cmp_format({ mode = "symbol_text" })(entry, item)
+        local strings = vim.split(item.kind, "%s", { trimempty = true })
+        modified_item.kind = " " .. (strings[1] or "") .. " "
+        modified_item.menu = "    (" .. (strings[2] or "") .. ")"
+
+        if DEBUG then
+          local msg = ""
+          msg = msg .. string.format("item: %s", vim.inspect(item)) 
+          msg = msg .. string.format(", item.kind: \"%s\"", item.kind)
+          msg = msg .. string.format(", strings[] (split from item.kind): %s", vim.inspect(strings))
+          msg = msg .. string.format(", modified_item: %s", vim.inspect(modified_item)) 
+          msg = msg .. string.format(", modified_item.kind: %s", modified_item.kind) 
+          print(msg)
+        end 
+
+        return item 
+      end
+
+      if DEBUG then 
+        local msg = ""
+        msg = msg .. string.format("\nentry: %s", entry)
+        msg = msg .. string.format("\n, original item: %s", vim.inspect(item))
+        print(msg)
+      end
+
+      return vanila(entry, item) 
+    end
+
   },
 })
+
+
