@@ -1,7 +1,6 @@
 -- Import and use color scheme
 local themePlugin = "onedarkpro"
 local themeName = "onedark"
-themeName = "lunaperche"
 local themeConf = {}
 
 local ok, theme = pcall(require, themePlugin)
