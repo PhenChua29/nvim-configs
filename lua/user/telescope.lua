@@ -6,3 +6,9 @@ if not ok then
 end
 
 telescope.setup()
+
+-- =========== Popup window appearance =========== 
+local api = vim.api
+
+api.nvim_set_hl(0, "TelescopeNormal", {}) 
+api.nvim_set_hl(0, "TelescopeBorder", {}) 
