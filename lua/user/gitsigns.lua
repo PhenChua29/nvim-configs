@@ -6,3 +6,8 @@ if not ok then
 end
 
 gitsigns.setup()
+
+-- =========== Appearance =========== 
+local api = vim.api
+
+api.nvim_set_hl(0, "GitSignsChange", { fg = "#5fafff" })
