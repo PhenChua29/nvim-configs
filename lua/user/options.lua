@@ -75,8 +75,8 @@ local options = {
 
   -- =========== SEARCHING =========== 
   
-  -- Turn off highlight
-  hlsearch = false,
+  -- Turn on highlight
+  hlsearch = true,
 
   -- For comfortably searching without needing to touch the Shift key
   ignorecase = true,
