@@ -72,6 +72,17 @@ local plugins = {
 
   -- Git integration
   { "lewis6991/gitsigns.nvim", lazy = true },
+  { "kdheepak/lazygit.nvim", event = "VeryLazy" },
+
+  -- Terminal
+   { "akinsho/toggleterm.nvim", lazy = true },
+
+  -- Notification
+  { "rcarriga/nvim-notify" },
+
+  -- Editing
+  { "windwp/nvim-autopairs", event = "InsertEnter" },
+  { "kylechui/nvim-surround", lazy = true },
 }
 
 -- Some custom icons for Lazy.nvim interfaces

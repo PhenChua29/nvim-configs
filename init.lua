@@ -4,16 +4,20 @@ vim.cmd "colorscheme lunaperche"
 -- Importing stuff down there
 
 local imports = {
-  "user.keymaps",
-  "user.options",
-  "user.plugins",
-  "user.theme",
-  "user.cmp",
-  "user.bigfile",
-  "user.lsp",
-  "user.telescope",
-  "user.whichkey",
-  "user.gitsigns",
+  "keymaps",
+  "options",
+  "plugins",
+  "notify",
+  "theme",
+  "cmp",
+  "bigfile",
+  "lsp",
+  "telescope",
+  "whichkey",
+  "gitsigns",
+  "toggleterm",
+  "autopairs",
+  "surround",
 }
 
 for _,v in pairs(imports) do

@@ -39,6 +39,13 @@ local maps = {
 
   -- Telescope
   { "n", "<leader>f", ":Telescope find_files<CR>", opts },
+
+  -- Git
+  { "n", "<leader>g", ":LazyGit<CR>", opts },
+
+  -- Terminal
+  { "n", "<leader>t", ":ToggleTerm direction=float<CR>", opts },
+  { "t", "<leader>t", "<cmd>ToggleTermToggleAll<CR>", opts },
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
