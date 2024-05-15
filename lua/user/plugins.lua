@@ -83,6 +83,9 @@ local plugins = {
   -- Editing
   { "windwp/nvim-autopairs", event = "InsertEnter" },
   { "kylechui/nvim-surround", lazy = true },
+
+  -- Formatter
+  { "sbdchd/neoformat", event = "InsertEnter" },
 }
 
 -- Some custom icons for Lazy.nvim interfaces

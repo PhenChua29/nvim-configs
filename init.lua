@@ -18,6 +18,7 @@ local imports = {
   "toggleterm",
   "autopairs",
   "surround",
+  "neoformat",
 }
 
 for _,v in pairs(imports) do
