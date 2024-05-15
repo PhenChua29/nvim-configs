@@ -39,6 +39,7 @@ local maps = {
 
   -- Telescope
   { "n", "<leader>f", ":Telescope find_files<CR>", opts },
+  { "n", "<leader>s", ":Telescope live_grep<CR>", opts },
 
   -- Git
   { "n", "<leader>g", ":LazyGit<CR>", opts },
@@ -46,6 +47,12 @@ local maps = {
   -- Terminal
   { "n", "<leader>t", ":ToggleTerm direction=float<CR>", opts },
   { "t", "<leader>t", "<cmd>ToggleTermToggleAll<CR>", opts },
+
+  -- Appearance
+  { "n", "<ESC>", ":noh<CR>", opts },
+
+  -- Lsp
+  { "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts },
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
