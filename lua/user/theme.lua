@@ -5,8 +5,8 @@ local themeConf = {}
 
 local ok, theme = pcall(require, themePlugin)
 if not ok then
-  vim.notify("Error while loading: " .. themePlugin)
-  error(theme)
+  print("Error while loading: " .. themePlugin)
+  vim.notify(theme, "error", { title = "theme" })
 end
 
 theme.setup(themeConf)

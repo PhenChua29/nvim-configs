@@ -2,15 +2,16 @@
 local ok, lspconfig = pcall(require, "lspconfig")
 
 if not ok then
-  vim.notify("Error while loading: lspconfig")
-  error(lspconfig)
+  print("Error while loading: lspconfig")
+  vim.notify(lspconfig, "error", { title = "lspconfig" })
+  return
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 
 if not ok then
-  vim.notify("Error while loading: cmp_nvim_lsp")
-  error(cmp_nvim_lsp)
+  print("Error while loading: cmp_nvim_lsp")
+  vim.notify(cmp_nvim_lsp, "warn", { title = "cmp_nvim_lsp" })
 end
 
 -- Setup lsp support for cmp

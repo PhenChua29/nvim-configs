@@ -1,8 +1,9 @@
 local ok, cmp = pcall(require, "cmp")
 
 if not ok then
-  vim.notify("Error while loading: cmp")
-  error(cmp)
+  print("Error while loading: cmp")
+  vim.notify(cmp, "error", { title = "cmp" })
+  return
 end
 
 local DEBUG = false 

@@ -18,7 +18,7 @@ local cmd = {
 -- Check if the directory is present. If not, clone the repo
 if not (vim.uv or vim.loop).fs_stat(installPath) then
   vim.fn.system(cmd)
-  vim.notify("Lazy.nvim directory not detected, installing...")
+  print("Lazy.nvim directory not detected, installing...")
 end
 
 vim.opt.rtp:prepend(installPath)
@@ -26,7 +26,7 @@ vim.opt.rtp:prepend(installPath)
 -- Setting up lazy.nvim
 local ok, lazy = pcall(require, "lazy")
 if not ok then
-  vim.notify("Error while loading: Lazy.nvim")
+  print("Error while loading: Lazy.nvim")
   error(lazy)
 end
 

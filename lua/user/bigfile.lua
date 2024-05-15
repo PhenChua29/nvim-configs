@@ -1,8 +1,9 @@
 local ok, bigfile = pcall(require, "bigfile")
 
 if not ok then
-  vim.notify("Error while loading: bigfile.nvim")
-  error(bigfile)
+  print("Error while loading: bigfile.nvim")
+  vim.notify(bigfile, "error", { title = "bigfile" })
+  return
 end
 
 bigfile.setup({

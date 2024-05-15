@@ -1,8 +1,9 @@
 local ok, telescope = pcall(require, "telescope")
 
 if not ok then
-  vim.notify("Error while loading: telescope")
-  error(telescope)
+  print("Error while loading: telescope.nvim")
+  vim.notify(telescope, "error", { title = "telescope" })
+  return
 end
 
 telescope.setup()

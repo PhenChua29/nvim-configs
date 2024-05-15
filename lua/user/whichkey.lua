@@ -1,8 +1,9 @@
 local ok, wk = pcall(require, "which-key")
 
 if not ok then
-  vim.notify("Error while loading: which-key")
-  error(wk)
+  print("Error while loading: which-key.nvim")
+  vim.notify(wk, "error", { title = "which-key" })
+  return 
 end
 
 wk.register()
