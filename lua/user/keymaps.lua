@@ -47,6 +47,7 @@ local maps = {
   -- Terminal
   { "n", "<leader>t", ":ToggleTerm direction=float<CR>", opts },
   { "t", "<leader>t", "<cmd>ToggleTermToggleAll<CR>", opts },
+  { "t", "<C-\\>", "<C-\\><C-n>", opts },
 
   -- Appearance
   { "n", "<ESC>", ":noh<CR>", opts },
