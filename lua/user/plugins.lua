@@ -72,7 +72,15 @@ local plugins = {
 
   -- Git integration
   { "lewis6991/gitsigns.nvim", lazy = true },
-  { "kdheepak/lazygit.nvim", event = "VeryLazy" },
+  {
+    "kdheepak/lazygit.nvim",
+      event = "VeryLazy",
+
+      -- optional for floating window border decoration
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+      },
+  },
 
   -- Terminal
    { "akinsho/toggleterm.nvim", lazy = true },
