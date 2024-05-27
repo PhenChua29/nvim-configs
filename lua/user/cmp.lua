@@ -6,6 +6,13 @@ if not ok then
   return
 end
 
+local ok_luasnip, luasnip = pcall(require, "luasnip")
+
+if not ok_luasnip then
+  print("Error while loading: luasnip")
+  vim.notify(luasnip, "error", { title = "cmp" })
+end
+
 local DEBUG = false 
 
 local src = {
@@ -46,6 +53,9 @@ local src = {
   { -- lsp
     name = "nvim_lsp"
   },
+  { -- luasnip
+    name = "luasnip",
+  }
 }
 
 function getBorder(joins, horizontal, vertical)
@@ -106,7 +116,17 @@ cmp.setup({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 
     ["<C-y>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close()
+    ["<C-e>"] = cmp.mapping.close(),
+    
+    ["<Tab>"] = cmp.mapping(function (fallback)
+      if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end
+    ),
+
   },
 
   experimental = {
@@ -170,7 +190,9 @@ cmp.setup({
         local ok, lspkind = pcall(require, "lspkind")
         
         if not ok then
-          vim.notify("Error while loading: lspkind")
+          print("Error while loading: lspkind")
+          vim.notify(lspkind, "error", { title = "cmp" })
+
           return vanila(entry, item) 
         end
 
@@ -203,6 +225,17 @@ cmp.setup({
     end
 
   },
+
+  snippet = {
+    expand = function(args)
+      if not ok_luasnip then
+        vim.snippet.expand(args.body)
+        return
+      end
+
+      luasnip.lsp_expand(args.body)
+    end,
+  }
 })
 
 

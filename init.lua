@@ -19,6 +19,9 @@ local imports = {
   "autopairs",
   "surround",
   "neoformat",
+  "luasnip",
+  "obsidian",
+  "lualine",
 }
 
 for _,v in pairs(imports) do

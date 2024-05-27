@@ -94,6 +94,36 @@ local plugins = {
 
   -- Formatter
   { "sbdchd/neoformat", event = "InsertEnter" },
+
+  -- Snippet engine
+  { 
+    "L3MON4D3/LuaSnip",
+    lazy = true,
+    dependencies = { 
+      "rafamadriz/friendly-snippets",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    build = "make install_jsregexp",
+  },
+  
+  -- Obsidian
+  {
+    "epwalsh/obsidian.nvim",
+    version="*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = { 
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+  },
+
+  -- Status line
+  {
+    'nvim-lualine/lualine.nvim',
+    lazy = true,
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
 }
 
 -- Some custom icons for Lazy.nvim interfaces

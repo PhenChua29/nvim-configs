@@ -19,3 +19,9 @@ end
 
 -- init TypeScript/JS lsp
 lspconfig.tsserver.setup({})
+
+-- init HTML/CSS/JSON/ESLINT
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.cssls.setup({ capabilities = capabilities })

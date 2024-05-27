@@ -4,6 +4,7 @@ declare -a dependencies=(
   # lsp
   "typescript-language-server"
   "typescript" 
+  "vscode-langservers-extracted"
 
   # neoformat
   "prettier"
