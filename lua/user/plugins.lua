@@ -120,9 +120,9 @@ local plugins = {
 
   -- Status line
   {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     lazy = true,
-    dependencies = { 'nvim-tree/nvim-web-devicons' }
+    dependencies = { "nvim-tree/nvim-web-devicons" }
   },
 }
 
