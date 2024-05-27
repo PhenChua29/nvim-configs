@@ -10,50 +10,54 @@ local maps = {
   { "", "<Space>", "<Nop>", opts }, 
   
   -- Open explorer
-  { "n", "<leader>e", ":Lex 20<CR>", opts },
+  { "n", "<leader>e", ":sil Lex 20<CR>", opts },
   
   -- Pasting without yanking
   { "v", "p", '"_dP', opts },
   
   -- Resize windows
-  { "n", "<Up>", ":resize -2<CR>", opts },
-  { "n", "<Down>", ":resize +2<CR>", opts },
-  { "n", "<Left>", ":vertical resize -2<CR>", opts },
-  { "n", "<Right>", ":vertical resize +2<CR>", opts },
+  { "n", "<Up>", ":sil resize -2<CR>", opts },
+  { "n", "<Down>", ":sil resize +2<CR>", opts },
+  { "n", "<Left>", ":sil vertical resize -2<CR>", opts },
+  { "n", "<Right>", ":sil vertical resize +2<CR>", opts },
   
   -- Switch bettween buffers 
-  { "n", "<S-l>", ":bnext<CR>", opts },
-  { "n", "<S-h>", ":bprevious<CR>", opts },
+  { "n", "<S-l>", ":sil bnext<CR>", opts },
+  { "n", "<S-h>", ":sil bprevious<CR>", opts },
   
   -- Move lines up/down
-  { "n", "<A-j>", ":move .+1<CR>==", opts },
-  { "n", "<A-k>", ":move .-2<CR>==", opts },
-  { "i", "<A-j>", "<ESC>:move .+1<CR>==gi", opts },
-  { "i", "<A-k>", "<ESC>:move .-2<CR>==gi", opts },
-  { "v", "<A-j>", ":move '>+1<CR>gv=gv", opts },
-  { "v", "<A-k>", ":move '<-2<CR>gv=gv", opts },
+  { "n", "<A-j>", ":sil move .+1<CR>==", opts },
+  { "n", "<A-k>", ":sil move .-2<CR>==", opts },
+  { "i", "<A-j>", "<ESC>:sil move .+1<CR>==gi", opts },
+  { "i", "<A-k>", "<ESC>:sil move .-2<CR>==gi", opts },
+  { "v", "<A-j>", ":sil move '>+1<CR>gv=gv", opts },
+  { "v", "<A-k>", ":sil move '<-2<CR>gv=gv", opts },
 
   -- Move line left/right
   { "v", "<", "<gv", opts },
   { "v", ">", ">gv", opts },
 
   -- Telescope
-  { "n", "<leader>f", ":Telescope find_files<CR>", opts },
-  { "n", "<leader>s", ":Telescope live_grep<CR>", opts },
+  { "n", "<leader>f", ":sil Telescope find_files<CR>", opts },
+  { "n", "<leader>s", ":sil Telescope live_grep<CR>", opts },
+  { "n", "<leader>p", ":sil Telescope commands<CR>", opts },
 
   -- Git
-  { "n", "<leader>g", ":LazyGit<CR>", opts },
+  { "n", "<leader>g", ":sil LazyGit<CR>", opts },
 
   -- Terminal
-  { "n", "<leader>t", ":ToggleTerm direction=float<CR>", opts },
+  { "n", "<leader>t", ":sil ToggleTerm direction=float<CR>", opts },
   { "t", "<leader>t", "<cmd>ToggleTermToggleAll<CR>", opts },
   { "t", "<C-\\>", "<C-\\><C-n>", opts },
 
   -- Appearance
-  { "n", "<ESC>", ":noh<CR>", opts },
+  { "n", "<ESC>", ":sil noh<CR>", opts },
 
   -- Lsp
-  { "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts },
+  { "n", "gi", ":sil lua vim.lsp.buf.implementation()<CR>", opts },
+
+  -- Obsidian
+  { "n", "<leader>op", "<cmd>ObsidianPasteImg<cr>", opts },
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
