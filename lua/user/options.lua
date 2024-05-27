@@ -37,8 +37,8 @@ local options = {
   -- I don't have to calculate the number of line I need to jump anymore 🙂
   relativenumber = true,
 
-  -- Always show the tabs on the top, even if there is just one tab
-  showtabline = 2,
+  -- Hide the tab line that shows file path on the top left  
+  showtabline = 0,
 
   -- Making the suggestion menu in command mode a little taller
   pumheight = 20,
@@ -54,11 +54,20 @@ local options = {
 
   -- Make the :split window's content stay at one place when I move the border between them using cursor
   splitkeep = "screen",
+
+  -- Enable custom Obsidian ui
+  conceallevel = 1, 
   
+  -- Makes splits windows have a nice divider 
+  laststatus = 3,
+
+  -- Hide cmd at the bottom unless it is used
+  cmdheight = 0,
+   
   -- =========== COPYING =========== 
   
-  -- Using the register "*" for all yank, delete, change & put operations. Also for using the same register as the mouse's copy/paste function
-  clipboard = "unnamed",
+  -- Use the same sclipboard as system clipboard
+  clipboard = "unnamedplus",
 
   -- =========== FILE FORMAT =========== 
 
