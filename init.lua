@@ -20,7 +20,7 @@ local imports = {
   "surround",
   "neoformat",
   "luasnip",
-  "obsidian",
+--  "obsidian",
   "lualine",
 }
 

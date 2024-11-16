@@ -10,10 +10,9 @@ end
 
 -- lua files
 local imports = {
-  "user.options",
+  "user.vscode.options",
   "user.vscode-keybinds",
 }
-
 
 for _, v in pairs(imports) do
   local ok, err = pcall(require, v)
@@ -48,4 +47,4 @@ if not ok then
   return
 end
 
-vscode.notify("Loaded neovim init file")
+-- vscode.notify("Loaded neovim init file")

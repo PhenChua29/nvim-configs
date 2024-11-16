@@ -35,6 +35,13 @@ if vim.g.vscode then
     {preferedMode, "<Left>", vscode .. "call('workbench.action.decreaseViewWidth')" .. "<CR>", opts},
     {preferedMode, "<Right>", vscode .. "call('workbench.action.increaseViewWidth')" .. "<CR>", opts},
   }
+  
+  -- Make multiple cursors work
+  vim.keymap.set({ "n", "x", "i" }, "<C-S-d>", function()
+    vscode.with_insert(function()
+      vscode.action("editor.action.addSelectionToNextFindMatch")
+    end)
+  end)
 else 
   keymap = {
     -- Move between windows
