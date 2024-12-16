@@ -1,4 +1,9 @@
 local options = {
+  -- =========== NAVIGATION =========== 
+  
+  -- Enable smart indentation so that the new line is automatically indented, not just 
+  -- copied indentation from the previous line
+  smartindent = true,
 
   -- =========== LINTING =========== 
   
@@ -65,8 +70,8 @@ local options = {
   cmdheight = 0,
    
   -- =========== COPYING =========== 
-  
-  -- Use the same sclipboard as system clipboard
+
+  -- Use the same clipboard as system clipboard
   clipboard = "unnamedplus",
 
   -- =========== FILE FORMAT =========== 
@@ -102,7 +107,6 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
  
 -- =========== NETRW =========== 
 local netrw_options = {
