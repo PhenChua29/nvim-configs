@@ -16,7 +16,7 @@ declare -a dependencies=(
 for i in "${dependencies[@]}"
 do
   echo "Installing $i"
-  npm i -g --verbose $i  
+  pnpm i -g $i  
 done
   
 echo "Installed all dependencies!"
