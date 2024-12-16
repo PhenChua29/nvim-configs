@@ -58,6 +58,14 @@ local maps = {
 
   -- Obsidian
   { "n", "<leader>op", "<cmd>ObsidianPasteImg<cr>", opts },
+
+
+  -- =========== Editting =========== 
+
+  -- Commenting
+  { "n", "<leader>c", ":normal gcc<CR>", opts },
+  { "v", "<leader>c", ":normal gcc<CR>", opts },
+
 }
 
 -- Ensure that the leader key is set to space before setting any keymaps
