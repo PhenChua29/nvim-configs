@@ -18,10 +18,15 @@ end
 -- local config = { capabilities = cmp_nvim_lsp.default_capabilities() }
 
 -- init TypeScript/JS lsp
-lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({})
 
 -- init HTML/CSS/JSON/ESLINT
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.cssls.setup({ capabilities = capabilities })
+
+-- init Ansible language server
+lspconfig.ansiblels.setup({
+  filetypes = { "yaml" }
+})
