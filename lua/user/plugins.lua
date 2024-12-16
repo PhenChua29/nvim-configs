@@ -91,6 +91,10 @@ local plugins = {
   -- Editing
   { "windwp/nvim-autopairs", event = "InsertEnter" },
   { "kylechui/nvim-surround", lazy = true },
+  { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+
+  -- Treesitter
+  { "nvim-treesitter/nvim-treesitter", event = "BufEnter" },
 
   -- Formatter
   { "sbdchd/neoformat", event = "InsertEnter" },

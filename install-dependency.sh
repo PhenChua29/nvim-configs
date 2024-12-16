@@ -8,6 +8,9 @@ declare -a dependencies=(
 
   # neoformat
   "prettier"
+
+  # treesitter cli
+  "tree-sitter-cli"
 )
 
 for i in "${dependencies[@]}"

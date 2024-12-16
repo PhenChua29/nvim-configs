@@ -17,6 +17,8 @@ local imports = {
   "gitsigns",
   "toggleterm",
   "autopairs",
+  "autotag",
+  "treesitter",
   "surround",
   "neoformat",
   "luasnip",
