@@ -13,7 +13,7 @@ local imports = {
   "bigfile",
   "lsp",
   "telescope",
-  "whichkey",
+--  "whichkey",
   "gitsigns",
   "toggleterm",
   "autopairs",
