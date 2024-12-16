@@ -24,6 +24,7 @@ local imports = {
   "luasnip",
 --  "obsidian",
   "lualine",
+  "oil"
 }
 
 for _,v in pairs(imports) do

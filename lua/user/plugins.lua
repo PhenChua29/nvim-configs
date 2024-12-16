@@ -128,6 +128,11 @@ local plugins = {
     lazy = true,
     dependencies = { "nvim-tree/nvim-web-devicons" }
   },
+
+  -- File exlorer
+  {
+    "stevearc/oil.nvim"
+  }
 }
 
 -- Some custom icons for Lazy.nvim interfaces

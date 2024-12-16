@@ -10,7 +10,7 @@ local maps = {
   { "", "<Space>", "<Nop>", opts }, 
   
   -- Open explorer
-  { "n", "<leader>e", ":sil Lex 20<CR>", opts },
+  { "n", "<leader>e", ":Oil<CR>", opts },
   
   -- Pasting without yanking
   { "v", "p", '"_dP', opts },
