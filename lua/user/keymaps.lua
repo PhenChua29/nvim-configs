@@ -55,6 +55,8 @@ local maps = {
 
   -- Lsp
   { "n", "gi", ":sil lua vim.lsp.buf.implementation()<CR>", opts },
+  { "n", "gd", ":sil lua vim.lsp.buf.definition()<CR>", opts },
+  { "n", "gh", ":sil lua vim.lsp.buf.hover()<CR>", opts },
 
   -- Obsidian
   { "n", "<leader>op", "<cmd>ObsidianPasteImg<cr>", opts },
@@ -63,8 +65,8 @@ local maps = {
   -- =========== Editting =========== 
 
   -- Commenting
-  { "n", "<leader>c", ":normal gcc<CR>", opts },
-  { "v", "<leader>c", ":normal gcc<CR>", opts },
+  { "n", "<leader>/", ":normal gcc<CR>", opts },
+  { "v", "<leader>/", ":normal gcc<CR>", opts },
 
 }
 

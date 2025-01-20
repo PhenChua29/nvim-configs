@@ -6,4 +6,8 @@ if not ok then
   return
 end
 
-oil.setup()
+oil.setup({
+  view_options = {
+    show_hidden = true
+  }
+})

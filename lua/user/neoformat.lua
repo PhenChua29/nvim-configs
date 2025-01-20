@@ -3,6 +3,9 @@ local configs = {
  { "neoformat_basic_format_align", 1 },
  { "neoformat_basic_format_retab", 1 },
  { "neoformat_basic_format_trim", 1 },
+ 
+ -- Load formatters from node_modules first
+ { "neoformat_try_node_exe", 1 }
 }
 
 for k, v in pairs(configs) do

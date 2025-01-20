@@ -1,6 +1,6 @@
 -- Import and use color scheme
 local themePlugin = "onedarkpro"
-local themeName = "onedark"
+local themeName = "onedark_dark"
 local themeConf = {}
 
 local ok, theme = pcall(require, themePlugin)

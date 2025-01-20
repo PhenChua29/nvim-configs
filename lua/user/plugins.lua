@@ -48,6 +48,7 @@ local plugins = {
       "SergioRibera/cmp-dotenv",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp",    
+      "luckasRanarison/tailwind-tools.nvim"
     },
   },
    
@@ -87,14 +88,20 @@ local plugins = {
 
   -- Notification
   { "rcarriga/nvim-notify" },
+  { "folke/trouble.nvim", event = "BufReadPre" },
 
   -- Editing
   { "windwp/nvim-autopairs", event = "InsertEnter" },
   { "kylechui/nvim-surround", lazy = true },
   { "windwp/nvim-ts-autotag", event = "InsertEnter" },
+  { "numToStr/Comment.nvim", event = "BufEnter" },
+  { "JoosepAlviste/nvim-ts-context-commentstring", event = "BufEnter" },
 
   -- Treesitter
   { "nvim-treesitter/nvim-treesitter", event = "BufEnter" },
+
+  -- Highlighter
+  { "catgoose/nvim-colorizer.lua", event = "BufReadPre" },
 
   -- Formatter
   { "sbdchd/neoformat", event = "InsertEnter" },
@@ -129,10 +136,32 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" }
   },
 
-  -- File exlorer
+  -- Buffer line
+  { 
+    "akinsho/bufferline.nvim", 
+    event = "BufEnter",
+    dependencies = "nvim-tree/nvim-web-devicons"
+  },
+
+  -- File explorer
   {
     "stevearc/oil.nvim"
-  }
+  },
+
+  -- TailwindCSS
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    event = "BufEnter",
+    dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope.nvim",
+    "neovim/nvim-lspconfig",
+    } 
+  },
+
+  -- Indent line
+  { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" },
+
 }
 
 -- Some custom icons for Lazy.nvim interfaces

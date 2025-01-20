@@ -6,6 +6,7 @@ declare -a dependencies=(
   "typescript" 
   "vscode-langservers-extracted"
   "@ansible/ansible-language-server"
+  "@tailwindcss/language-server"
 
   # neoformat
   "prettier"

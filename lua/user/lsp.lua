@@ -14,6 +14,26 @@ if not ok then
   vim.notify(cmp_nvim_lsp, "warn", { title = "cmp_nvim_lsp" })
 end
 
+-- Change hover border
+local border = {
+      {"┏", "FloatBorder"},
+      {"━", "FloatBorder"},
+      {"┓", "FloatBorder"},
+      {"┃", "FloatBorder"},
+      {"┛", "FloatBorder"},
+      {"━", "FloatBorder"},
+      {"┗", "FloatBorder"},
+      {"┃", "FloatBorder"},
+}
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or border
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+
 -- Setup lsp support for cmp
 -- local config = { capabilities = cmp_nvim_lsp.default_capabilities() }
 
@@ -30,3 +50,6 @@ lspconfig.cssls.setup({ capabilities = capabilities })
 lspconfig.ansiblels.setup({
   filetypes = { "yaml" }
 })
+
+-- init TailwindCSS server
+lspconfig.tailwindcss.setup{}
