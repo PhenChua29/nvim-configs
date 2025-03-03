@@ -47,9 +47,15 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.cssls.setup({ capabilities = capabilities })
 
 -- init Ansible language server
-lspconfig.ansiblels.setup({
-  filetypes = { "yaml" }
-})
+-- lspconfig.ansiblels.setup({
+  -- filetypes = { "yaml" }
+-- })
 
 -- init TailwindCSS server
 lspconfig.tailwindcss.setup{}
+
+-- Java
+lspconfig.java_language_server.setup{}
+
+-- Kotlin
+lspconfig.kotlin_language_server.setup{}

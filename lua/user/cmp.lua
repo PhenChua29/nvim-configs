@@ -117,16 +117,6 @@ cmp.setup({
 
     ["<C-y>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    
-    ["<Tab>"] = cmp.mapping(function (fallback)
-      if luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end
-    ),
-
   },
 
   experimental = {

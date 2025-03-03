@@ -29,7 +29,9 @@ local imports = {
   "lualine",
   "bufferline",
   "indent-blankline",
-  "oil"
+  "oil",
+  "copilot",
+  "neovide"
 }
 
 for _,v in pairs(imports) do

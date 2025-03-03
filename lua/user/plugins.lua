@@ -162,6 +162,8 @@ local plugins = {
   -- Indent line
   { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" },
 
+  -- AI
+  { "github/copilot.vim", event = "BufEnter" }
 }
 
 -- Some custom icons for Lazy.nvim interfaces
