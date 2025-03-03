@@ -61,6 +61,9 @@ local maps = {
   -- Obsidian
   { "n", "<leader>op", "<cmd>ObsidianPasteImg<cr>", opts },
 
+  -- auto-session
+  { "n", "<leader>wr", "<cmd>SessionSearch<CR>", { noremap = true, silent = true, desc = "Session search" } },
+  { "n", "<leader>ws", "<cmd>SessionSave<CR>", { noremap = true, silent = true, desc = "Save session" } },
 
   -- =========== Editting =========== 
 

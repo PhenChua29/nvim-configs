@@ -163,7 +163,10 @@ local plugins = {
   { "lukas-reineke/indent-blankline.nvim", event = "BufEnter" },
 
   -- AI
-  { "github/copilot.vim", event = "BufEnter" }
+  { "github/copilot.vim", event = "BufEnter" },
+
+  -- Sessions manager 
+  { "rmagatti/auto-session", lazy = false }
 }
 
 -- Some custom icons for Lazy.nvim interfaces

@@ -31,7 +31,8 @@ local imports = {
   "indent-blankline",
   "oil",
   "copilot",
-  "neovide"
+  "neovide",
+  "auto-session"
 }
 
 for _,v in pairs(imports) do
