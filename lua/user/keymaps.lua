@@ -65,6 +65,10 @@ local maps = {
   { "n", "<leader>wr", "<cmd>SessionSearch<CR>", { noremap = true, silent = true, desc = "Session search" } },
   { "n", "<leader>ws", "<cmd>SessionSave<CR>", { noremap = true, silent = true, desc = "Save session" } },
 
+  -- trouble
+  
+  { "n", "<leader>y", "<cmd>Trouble diagnostics toggle focus=false<cr>", opts },
+
   -- =========== Editting =========== 
 
   -- Commenting
