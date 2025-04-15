@@ -30,12 +30,19 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			file_ignore_patterns = { "node_modules", ".git", ".venv", ".next" },
+			file_ignore_patterns = { "^node_modules", "^.git", "^.venv", "^.next", "^.history", "^android" },
 			hidden = true,
 			no_ignore = true,
 		},
 	},
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({}),
+		},
+	},
 })
+
+telescope.load_extension("ui-select")
 
 -- =========== Popup window appearance ===========
 local api = vim.api
