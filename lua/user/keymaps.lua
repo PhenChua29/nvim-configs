@@ -37,9 +37,10 @@ local maps = {
   { "v", "<", "<gv", opts },
   { "v", ">", ">gv", opts },
 
-  -- Telescope
-  { "n", "<leader>f", ":sil Telescope find_files<CR>", opts },
-  { "n", "<leader>s", ":sil Telescope live_grep<CR>", opts },
+  -- Search
+  { "n", "<leader>f", ":sil FzfLua files<CR>", opts },
+  { "n", "<leader>s", ":sil FzfLua live_grep_glob<CR>", opts },
+  { "n", "<leader>u", ":sil FzfLua grep_cword<CR>", opts },
   { "n", "<leader>p", ":sil Telescope commands<CR>", opts },
 
   -- Git
@@ -68,6 +69,10 @@ local maps = {
   -- trouble
   
   { "n", "<leader>y", "<cmd>Trouble diagnostics toggle focus=false<cr>", opts },
+
+  -- AI
+  
+  { "n", "<leader>c", "<cmd>CopilotChat<cr>", opts },
 
   -- =========== Editting =========== 
 

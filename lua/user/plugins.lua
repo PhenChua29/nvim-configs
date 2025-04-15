@@ -58,7 +58,7 @@ local plugins = {
 	-- lsp
 	{ "neovim/nvim-lspconfig", lazy = true },
 
-	-- Telescope
+	-- Search
 	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
@@ -66,6 +66,11 @@ local plugins = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-fzf-native.nvim", -- improve sorting performance
 		},
+	},
+	{ "nvim-telescope/telescope-ui-select.nvim", lazy = true },
+	{
+		"ibhagwan/fzf-lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- Which key
@@ -129,6 +134,12 @@ local plugins = {
 		},
 	},
 
+	-- Markdown
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+	},
+
 	-- Status line
 	{
 		"nvim-lualine/lualine.nvim",
@@ -164,6 +175,14 @@ local plugins = {
 
 	-- AI
 	{ "github/copilot.vim", event = "BufEnter" },
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "github/copilot.vim" },
+			{ "nvim-lua/plenary.nvim", branch = "master" },
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+	},
 
 	-- Sessions manager
 	{ "rmagatti/auto-session", lazy = false },
