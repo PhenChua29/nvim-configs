@@ -120,3 +120,13 @@ local netrw_options = {
 for k, v in pairs(netrw_options) do
 	vim.g[k] = v
 end
+
+-- Set wrap and linebreak on markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+  desc = "Enable wrap and linebreak for markdown files",
+})
