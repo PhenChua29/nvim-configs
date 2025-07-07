@@ -14,6 +14,7 @@ local imports = {
 	"lsp",
 	-- "tailwindcss",
 	"telescope",
+  "fzf-lua",
 	-- "whichkey",
 	"gitsigns",
 	"toggleterm",

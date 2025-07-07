@@ -30,7 +30,7 @@ telescope.setup({
 	},
 	pickers = {
 		find_files = {
-			file_ignore_patterns = { "^node_modules", "^.git", "^.venv", "^.next", "^.history", "^android" },
+			file_ignore_patterns = { "^node_modules", "^.git", "^.venv", "^.next", "^.history", "^android", "^build" },
 			hidden = true,
 			no_ignore = true,
 		},
