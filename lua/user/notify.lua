@@ -10,9 +10,8 @@ notify.setup({
   background_colour = "#000000",
 })
 
-vim.notify = notify
+_G.notify = notify
 
--- Remove the annoying message
 local banned_messages = { "No information available" }
 vim.notify = function(msg, ...)
   for _, banned in ipairs(banned_messages) do
