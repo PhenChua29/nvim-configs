@@ -174,15 +174,15 @@ local plugins = {
 	{ "lukas-reineke/indent-blankline.nvim", event = "BufEnter" },
 
 	-- AI
-	{ "github/copilot.vim", event = "BufEnter" },
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		dependencies = {
-			{ "github/copilot.vim" },
-			{ "nvim-lua/plenary.nvim", branch = "master" },
-		},
-		build = "make tiktoken", -- Only on MacOS or Linux
-	},
+	-- { "github/copilot.vim", event = "BufEnter" },
+	-- {
+		-- "CopilotC-Nvim/CopilotChat.nvim",
+		-- dependencies = {
+			-- { "github/copilot.vim" },
+			-- { "nvim-lua/plenary.nvim", branch = "master" },
+		-- },
+		-- build = "make tiktoken", -- Only on MacOS or Linux
+	-- },
 
 	-- Sessions manager
 	{ "rmagatti/auto-session", lazy = false },
