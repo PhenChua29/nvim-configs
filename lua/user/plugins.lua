@@ -57,6 +57,7 @@ local plugins = {
 
 	-- lsp
 	{ "neovim/nvim-lspconfig", lazy = true },
+	{ "nvim-java/nvim-java", lazy = true },
 
 	-- Search
 	{

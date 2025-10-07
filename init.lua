@@ -14,6 +14,7 @@ local imports = {
 	"lsp",
 	-- "tailwindcss",
 	"mason",
+  -- "java",
 	"telescope",
   "fzf-lua",
 	-- "whichkey",
