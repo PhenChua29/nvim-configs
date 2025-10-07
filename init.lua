@@ -12,7 +12,6 @@ local imports = {
 	"cmp",
 	"bigfile",
 	"lsp",
-	-- "tailwindcss",
 	"mason",
   -- "java",
 	"telescope",

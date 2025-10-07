@@ -48,7 +48,6 @@ local plugins = {
 			"SergioRibera/cmp-dotenv",
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
-			"luckasRanarison/tailwind-tools.nvim",
 		},
 	},
 
@@ -158,17 +157,6 @@ local plugins = {
 	-- File explorer
 	{
 		"stevearc/oil.nvim",
-	},
-
-	-- TailwindCSS
-	{
-		"luckasRanarison/tailwind-tools.nvim",
-		event = "BufEnter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim",
-			"neovim/nvim-lspconfig",
-		},
 	},
 
 	-- Indent line
