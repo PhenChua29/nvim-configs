@@ -74,11 +74,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = { "*.yml", "*.yaml" },
 	callback = function()
 		local first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false)
-		vim.api.nvim_echo({ { "first_line: " .. first_line[1] } }, true, {})
 
 		if first_line[1] ~= nil and first_line[1] == "---" then
 			vim.bo[0].filetype = "yaml.ansible"
-			vim.api.nvim_echo({ { "modified this buffer type to yaml.ansible" } }, true, {})
 		end
 	end,
 	desc = "Automatically detect ansible files",
