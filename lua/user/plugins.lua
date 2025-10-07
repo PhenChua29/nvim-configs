@@ -188,7 +188,16 @@ local plugins = {
 	{ "rmagatti/auto-session", lazy = false },
 
 	-- Package manager
-	{ "williamboman/mason.nvim" },
+	{
+		"mason-org/mason.nvim",
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
+	},
 	{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 
 	-- Dianosis

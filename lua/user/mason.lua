@@ -6,7 +6,13 @@ if not ok then
 	return
 end
 
-mason.setup()
+mason.setup({
+	registries = {
+		"github:mason-org/mason-registry",
+		"github:mason-org/mason-registry",
+		"github:Crashdummyy/mason-registry",
+	},
+})
 
 local ok, masonInstaller = pcall(require, "mason-tool-installer")
 
@@ -21,6 +27,34 @@ masonInstaller.setup({
 		"stylua",
 		"prettier",
 		"clang-format",
-		"shfmt"
-	}
+		"shfmt",
+
+		-- lsp
+		"typescript-language-server",
+		"css-lsp", -- CSS, SCSS, LESS
+		"jdtls", -- Java
+		"tailwindcss-language-server",
+		"kotlin-language-server",
+		"ansible-language-server",
+		"eslint-lsp",
+		"basedpyright", -- Python
+	},
 })
+
+local ok, masonLsp = pcall(require, "mason-lspconfig")
+
+if not ok then
+	print("Error while loading: mason-lspconfig")
+	notify(masonLsp, "error", { title = "mason-lspconfig" })
+	return
+end
+
+local ok, lspconfig = pcall(require, "lspconfig")
+
+if not ok then
+	print("Error while loading: lspconfig")
+	vim.notify(lspconfig, "error", { title = "lspconfig" })
+	return
+end
+
+masonLsp.setup()

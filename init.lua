@@ -13,6 +13,7 @@ local imports = {
 	"bigfile",
 	"lsp",
 	-- "tailwindcss",
+	"mason",
 	"telescope",
   "fzf-lua",
 	-- "whichkey",
@@ -38,7 +39,6 @@ local imports = {
   -- "avante",
 	"neovide",
 	"auto-session",
-	"mason",
 	"trouble",
 }
 
