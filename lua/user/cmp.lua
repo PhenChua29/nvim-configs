@@ -6,6 +6,7 @@ if not ok then
   return
 end
 
+local compare = cmp.config.compare
 local ok_luasnip, luasnip = pcall(require, "luasnip")
 
 if not ok_luasnip then
@@ -211,9 +212,35 @@ cmp.setup({
         print(msg)
       end
 
-      return vanila(entry, item) 
+      return vanila(entry, item, true) 
     end
 
+  },
+
+  sorting = {
+    comparators = {
+      function(entry1, entry2)
+        local s1, s2 = entry1.source.name, entry2.source.name
+
+        -- Prioritize LSP over others, but only if they differ
+        if s1 == "nvim_lsp" and s2 ~= "nvim_lsp" then
+          return true
+        elseif s2 == "nvim_lsp" and s1 ~= "nvim_lsp" then
+          return false
+        end
+
+        return nil
+      end,
+      compare.offset,
+      compare.exact,
+      compare.score,
+      compare.recently_used,
+      compare.locality,
+      compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    }
   },
 
   snippet = {
