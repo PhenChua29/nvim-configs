@@ -81,3 +81,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 	desc = "Automatically detect ansible files",
 })
+
+vim.lsp.config("basedpyright", {
+	settings = {
+		basedpyright = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
+})
