@@ -61,7 +61,7 @@ masonLsp.setup()
 local ignore = { lint = { unknownAtRules = "ignore" } }
 
 vim.lsp.config("cssls", {
-  -- Ignore the annoying unknownAtRules error in css files
+	-- Ignore the annoying unknownAtRules error in css files
 	settings = {
 		css = ignore,
 		scss = ignore,
