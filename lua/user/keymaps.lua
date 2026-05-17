@@ -89,7 +89,7 @@ local maps = {
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 for _, map in pairs(maps) do
 	keymap(map[1], map[2], map[3], map[4])
