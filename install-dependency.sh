@@ -1,17 +1,6 @@
 #!/bin/sh
 
 declare -a dependencies=(
-  # lsp
-  "typescript-language-server"
-  "typescript" 
-  "vscode-langservers-extracted"
-  "@ansible/ansible-language-server"
-  "@tailwindcss/language-server"
-
-  # neoformat
-  "prettier"
-
-  # treesitter cli
   "tree-sitter-cli"
 )
 
