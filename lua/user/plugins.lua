@@ -191,6 +191,9 @@ local plugins = {
 
 	-- Dianosis
 	{ "folke/trouble.nvim" },
+
+  -- Linters
+  { "mfussenegger/nvim-lint" }
 }
 
 -- Some custom icons for Lazy.nvim interfaces

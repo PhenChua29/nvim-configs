@@ -44,7 +44,7 @@ masonInstaller.setup({
 
     --linter,
     "golangci-lint",
-    "ruff"
+    "ruff",
 	},
 })
 

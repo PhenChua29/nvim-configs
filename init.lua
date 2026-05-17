@@ -40,6 +40,7 @@ local imports = {
 	"neovide",
 	"auto-session",
 	"trouble",
+  "lint",
 }
 
 for _, v in pairs(imports) do
