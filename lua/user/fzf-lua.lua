@@ -13,7 +13,6 @@ fzfLua.setup({
 			.. "--type l "
 			.. "--hidden "
 			.. "-E .git "
-			.. "-E build "
 			.. "-E nbproject "
 			.. "-E node_modules "
 			.. "-E .venv "
@@ -30,7 +29,6 @@ fzfLua.setup({
 			.. "--smart-case "
 			.. "--max-columns=4096 "
 			.. "--glob '!.git/*' "
-			.. "--glob '!build/*' "
 			.. "--glob '!nbproject/*' "
 			.. "--glob '!node_modules/*' "
 			.. "--glob '!.venv/*' "
@@ -40,4 +38,3 @@ fzfLua.setup({
 			.. "-e",
 	},
 })
-
