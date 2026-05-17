@@ -38,6 +38,7 @@ masonInstaller.setup({
 		"ansible-language-server",
 		"eslint-lsp",
 		"basedpyright", -- Python
+    "terraform-ls",
 	},
 })
 
