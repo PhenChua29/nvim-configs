@@ -28,6 +28,7 @@ masonInstaller.setup({
 		"prettier",
 		"clang-format",
 		"shfmt",
+    "black",
 
 		-- lsp
 		"typescript-language-server",
@@ -39,6 +40,7 @@ masonInstaller.setup({
 		"eslint-lsp",
 		"basedpyright", -- Python
     "terraform-ls",
+    "ruff"
 	},
 })
 
@@ -87,7 +89,7 @@ vim.lsp.config("basedpyright", {
 	settings = {
 		basedpyright = {
 			analysis = {
-				typeCheckingMode = "off",
+				typeCheckingMode = "standard",
 			},
 		},
 	},

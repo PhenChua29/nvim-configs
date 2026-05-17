@@ -23,6 +23,7 @@ formatter.setup({
 		java = require("formatter.filetypes.java").clangformat,
 		sh = require("formatter.filetypes.sh").shfmt,
     terraform = require("formatter.filetypes.terraform").terraformfmt,
+    python = require("formatter.filetypes.python").black
 	},
 })
 
