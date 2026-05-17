@@ -40,6 +40,10 @@ masonInstaller.setup({
 		"eslint-lsp",
 		"basedpyright", -- Python
     "terraform-ls",
+    "gopls",
+
+    --linter,
+    "golangci-lint",
     "ruff"
 	},
 })
