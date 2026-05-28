@@ -17,13 +17,19 @@ formatter.setup({
 		typescriptreact = require("formatter.filetypes.typescriptreact").prettier,
 		json = require("formatter.filetypes.json").prettier,
 		markdown = require("formatter.filetypes.markdown").prettier,
-		cs = require("formatter.filetypes.cs").clangformat,
+		cs = require("formatter.filetypes.cs").dotnetformat,
 		c = require("formatter.filetypes.c").clangformat,
 		cpp = require("formatter.filetypes.cpp").clangformat,
 		java = require("formatter.filetypes.java").clangformat,
 		sh = require("formatter.filetypes.sh").shfmt,
     terraform = require("formatter.filetypes.terraform").terraformfmt,
-    python = require("formatter.filetypes.python").black
+    python = {
+      require("formatter.filetypes.python").iruff,
+      require("formatter.filetypes.python").ruff,
+    },
+    yaml = require("formatter.filetypes.yaml").prettier,
+    toml = require("formatter.filetypes.toml").taplo,
+    rust = require("formatter.filetypes.rust").rustfmt,
 	},
 })
 
