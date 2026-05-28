@@ -18,4 +18,5 @@ lint.linters_by_ft = {
 	python = { "ruff" },
 	javascript = { "prettier", "eslint" },
 	go = { "golangcilint" },
+	sh = { "shellcheck" },
 }
