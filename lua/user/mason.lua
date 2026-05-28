@@ -10,7 +10,6 @@ mason.setup({
 	registries = {
 		"github:mason-org/mason-registry",
 		"github:mason-org/mason-registry",
-		"github:Crashdummyy/mason-registry",
 	},
 })
 
@@ -24,27 +23,31 @@ end
 
 masonInstaller.setup({
 	ensure_installed = {
+    -- formatter
 		"stylua",
 		"prettier",
 		"clang-format",
 		"shfmt",
-    "black",
+    "taplo",
 
 		-- lsp
 		"typescript-language-server",
 		"css-lsp", -- CSS, SCSS, LESS
-		"jdtls", -- Java
+		-- "jdtls", -- Java
 		"tailwindcss-language-server",
 		"kotlin-language-server",
 		"ansible-language-server",
 		"eslint-lsp",
 		"basedpyright", -- Python
+    "groovy-language-server",
     "terraform-ls",
     "gopls",
+    "rust-analyzer",
 
     --linter,
     "golangci-lint",
     "ruff",
+    "shellcheck",
 	},
 })
 
@@ -93,7 +96,7 @@ vim.lsp.config("basedpyright", {
 	settings = {
 		basedpyright = {
 			analysis = {
-				typeCheckingMode = "standard",
+				typeCheckingMode = "strict",
 			},
 		},
 	},
